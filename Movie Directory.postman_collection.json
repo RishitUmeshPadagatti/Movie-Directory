@@ -1,0 +1,581 @@
+{
+	"info": {
+		"_postman_id": "38d7382e-a9e6-4f82-80d2-7487f7ef4775",
+		"name": "Movie Directory",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33595799"
+	},
+	"item": [
+		{
+			"name": "Home",
+			"item": [
+				{
+					"name": "Now Playing",
+					"item": [
+						{
+							"name": "/movie/now_playing",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{API_READ_ACCESS_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/movie/now_playing?language=en-US&page=1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"movie",
+										"now_playing"
+									],
+									"query": [
+										{
+											"key": "language",
+											"value": "en-US"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Trending",
+					"item": [
+						{
+							"name": "/trending/movie/week (page1)",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{API_KEY}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/trending/movie/week?api_key={{API_KEY}}&page=1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"trending",
+										"movie",
+										"week"
+									],
+									"query": [
+										{
+											"key": "api_key",
+											"value": "{{API_KEY}}"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/trending/tv/week (page1)",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{API_KEY}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/trending/tv/week?api_key={{API_KEY}}&page=1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"trending",
+										"tv",
+										"week"
+									],
+									"query": [
+										{
+											"key": "api_key",
+											"value": "{{API_KEY}}"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Popular",
+					"item": [
+						{
+							"name": "/movie/popular",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{API_READ_ACCESS_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1",
+									"protocol": "https",
+									"host": [
+										"api",
+										"themoviedb",
+										"org"
+									],
+									"path": [
+										"3",
+										"movie",
+										"popular"
+									],
+									"query": [
+										{
+											"key": "language",
+											"value": "en-US"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/tv/popular",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{API_READ_ACCESS_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://api.themoviedb.org/3/tv/popular?language=en-US&page=1",
+									"protocol": "https",
+									"host": [
+										"api",
+										"themoviedb",
+										"org"
+									],
+									"path": [
+										"3",
+										"tv",
+										"popular"
+									],
+									"query": [
+										{
+											"key": "language",
+											"value": "en-US"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Movies",
+			"item": [
+				{
+					"name": "/discover/movie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/discover/movie?api_key={{API_KEY}}&sort_by=popularity.desc&language=en&page=1&with_genres=12",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"discover",
+								"movie"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{API_KEY}}"
+								},
+								{
+									"key": "sort_by",
+									"value": "popularity.desc"
+								},
+								{
+									"key": "sort_by",
+									"value": "popularity.asc",
+									"description": "Not recommended",
+									"disabled": true
+								},
+								{
+									"key": "year",
+									"value": "2024",
+									"disabled": true
+								},
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "with_genres",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/genre/movie/list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/genre/movie/list?api_key={{API_KEY}}",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"genre",
+								"movie",
+								"list"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{API_KEY}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TV Series",
+			"item": [
+				{
+					"name": "/discover/tv",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/discover/tv?api_key={{API_KEY}}&sort_by=popularity.desc&with_genres=28&language=en",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"discover",
+								"tv"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{API_KEY}}"
+								},
+								{
+									"key": "sort_by",
+									"value": "popularity.desc"
+								},
+								{
+									"key": "with_genres",
+									"value": "28",
+									"description": "None is appearing for 28"
+								},
+								{
+									"key": "year",
+									"value": "2024",
+									"disabled": true
+								},
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/genre/tv/list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/genre/tv/list?api_key={{API_KEY}}",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"genre",
+								"tv",
+								"list"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{API_KEY}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Top Rated",
+			"item": [
+				{
+					"name": "/movie/top_rated (page1)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{API_READ_ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/movie/top_rated?language=en-US&page=1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"movie",
+								"top_rated"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en-US"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/tv/top_rated (page1)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{API_READ_ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/tv/top_rated?language=en-US&page=1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"tv",
+								"top_rated"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en-US"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Images and Videos",
+			"item": [
+				{
+					"name": "/movie/:movie_id/videos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{API_READ_ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/movie/:movie_id/videos",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"movie",
+								":movie_id",
+								"videos"
+							],
+							"variable": [
+								{
+									"key": "movie_id",
+									"value": "1022789"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "backdrop image",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 99ccace0e7ab0630e4de23a16062cb17",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{IMAGE_BASE_URL}}/:backdrop_path_without_slash",
+							"host": [
+								"{{IMAGE_BASE_URL}}"
+							],
+							"path": [
+								":backdrop_path_without_slash"
+							],
+							"variable": [
+								{
+									"key": "backdrop_path_without_slash",
+									"value": "stKGOm8UyhuLPR9sZLjs5AkmncA.jpg"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "poster image",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 99ccace0e7ab0630e4de23a16062cb17",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{IMAGE_BASE_URL}}/:poster_path_without_slash",
+							"host": [
+								"{{IMAGE_BASE_URL}}"
+							],
+							"path": [
+								":poster_path_without_slash"
+							],
+							"variable": [
+								{
+									"key": "poster_path_without_slash",
+									"value": "vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "IMAGE_BASE_URL",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "API_KEY",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "API_READ_ACCESS_TOKEN",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
